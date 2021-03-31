@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MHAPh</title>
+    <meta name="description" content="Mental Health AWHEREness PH">
+    <link rel="credits to:" href="https://public.tableau.com/profile/spatially4u#!/">
+    <meta name="author" content="Andi Tabinas">
+
+    <meta property="og:title" content="MHAPh">
+    <meta property="og:description" content="Mental Health AWHEREness PH" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mentalhealthawhereness.github.io/mhaph/">
+    <meta property="og:site_name" content="GitHub" />
+    <meta property="og:image" content="https://i.imgur.com/sb7JInA.png">    
+
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="mask-icon" href="assets/logo-day.svg" color="#000000">
+
+    <script type='text/javascript' src='libraries/jquery-3.2.1.min.js'></script>
+    <link rel='stylesheet' href='styles.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin=""></script>
+	
+
+    <link rel='stylesheet' href='libraries/leaflet.css'>
+    <script type='text/javascript' src='libraries/leaflet.js'></script>
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://gme210soundmap.github.io/Manilaud/dist/L.Control.Locate.min.css" />
+    <link href="https://rawgit.com/k4r573n/leaflet-control-osm-geocoder/master/Control.OSMGeocoder.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo"></div>
+            <div class="more" onclick="toggleSidebar()"></div>
+            <div id="header">
+                <h1>MHAPh
+                <p>Mental Health AWHEREness PH</h1>
+            </div>
+        </div>    
+        <div class="center">
+            <p class="howto">Click on the dots to view information on available mental health services in the country. • <strong><a href="https://mentalhealthawhereness.com">About our org</a></strong> • <strong><a href="https://www.facebook.com/mentalhealthaWHEREness/photos/a.788464648584785/788464768584773">MH Services Directory</a></strong></p>
+            <ul class="legend">
+                <li class="item1">
+                    <h3>Free</h3>
+                </li>
+                <li class="item2">
+                    <h3>Paid</h3>
+                </li>
+                <li class="item3">
+                    <h3>Add or Update a mental health service</h3>
+                    <p>Help us map mental health services in the country or update details of already mapped services. Detailed instructions and more information <a href="https://mentalhealthawhereness.github.io/mhaph/assets/guide1.png">here.</a></p>                  
+                </li>
+            </ul>
+
+        </div>
+        <div class="bottom">
+
+            <div class="credits">
+                <div class="creditsleft">
+                    <a href="https://www-en.ntut.edu.tw/bin/home.php" target="_blank">NTUT</a> •
+                    <a href="https://github.com/FH-Potsdam/Sounds-of-Taipei" target="_blank">Github</a> •
+                    <a href="https://leafletjs.com" target="_blank">Leaflet</a> •                    
+                    <a href="https://www.mapbox.com/about/maps/">©Mapbox</a> •
+                    <a href="http://www.openstreetmap.org/copyright">©OpenStreetMap</a>
+                    <p><strong><a href="https://www.mapbox.com/map-feedback/">Improve this map</strong></a>
+                </div>
+                <div class="creditsright">
+                    <a id="toggleTime" href="?time=night">toggle</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <a href="https://forms.gle/p1cNjNtF7ffg1mbu9" target="_blank" class="addsound">+</a>
+    <div id="photo" class="hidden">
+        <p id="label">Sunset down by the river</p>
+    </div>
+    <div id="photobg" class="hidden"></div>
+    <div id="mapid">
+        <a href="http://mapbox.com/about/maps" class='mapbox-wordmark' target="_blank">Mapbox</a>
+        <div class="mapbox-attribution-container">
+            <a href="https://www.mapbox.com/about/maps/">© Mapbox | </a>
+            <a href="http://www.openstreetmap.org/copyright">© OpenStreetMap | </a>
+            <a href="https://www.mapbox.com/map-feedback/" target="_blank"><strong>Improve this map</strong></a>
+        </div>  
+    </div>
+</body>
+
+<script type='text/javascript' src='toggleSidebar.js'></script>
+<script type='text/javascript' src='scripts.js'></script>
+<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>   
+<script src="https://gme210soundmap.github.io/Manilaud/dist/L.Control.Locate.js"></script>
+<script src="https://rawgit.com/k4r573n/leaflet-control-osm-geocoder/master/Control.OSMGeocoder.js"></script>
+<script src="https://gme210soundmap.github.io/Manilaud/Leaflet.LocationShare.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<script src="PruneCluster/dist/PruneCluster.js"></script>
+	
+</html>
